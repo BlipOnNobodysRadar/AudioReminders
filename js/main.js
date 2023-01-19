@@ -1,9 +1,11 @@
+//TODO: fix countdown styling
+
 let audio = document.getElementById("audio");
 audio.playbackRate = 0.85;
 let minInterval = document.getElementById("minInterval").value;
 let maxInterval = document.getElementById("maxInterval").value;
 let intervalId;
-let countdown = document.getElementById("countdown");
+let countdown = document.querySelector(".hide");
 let time = document.getElementById("time");
 let nextPlayback;
 let countdownInterval;
@@ -19,16 +21,16 @@ audioFile.addEventListener("change", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.classList.add("bg-dark");
-  const textElements = document.querySelectorAll(
-    "h1, h2, h3, h4, p, span, button, label"
-  );
-  textElements.forEach((element) => {
-    element.classList.add("text-light");
-  });
-  countdown.style.display = "none";
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.body.classList.add("bg-dark");
+//   const textElements = document.querySelectorAll(
+//     "h1, h2, h3, h4, p, span, button, label"
+//   );
+//   textElements.forEach((element) => {
+//     element.classList.add("text-light");
+//   });
+//   countdown.style.display = "none";
+// });
 
 const playAudio = () => {
   // play the audio
@@ -42,7 +44,7 @@ const playAudio = () => {
   // set a timeout for the next playback
   intervalId = setTimeout(playAudio, nextInterval);
   // show the countdown
-  countdown.style.display = "block";
+  countdown.classList.toggle("hide");
   // update the countdown every second
   countdownInterval = setInterval(showTime, 1000);
 };
@@ -54,7 +56,7 @@ const stopAudio = () => {
   // pause the audio
   audio.pause();
   // hide the countdown
-  countdown.style.display = "none";
+  countdown.style.display = "hidden";
 };
 
 const randomInterval = () => {
@@ -87,9 +89,7 @@ const showTime = () => {
 };
 
 const toggleCountdown = () => {
-  countdown.style.display === "block"
-    ? (countdown.style.display = "none")
-    : (countdown.style.display = "block");
+  countdown.classList.toggle("hide");
 };
 
 const toggleTextColors = (darkColor, lightColor) => {

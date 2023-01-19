@@ -4,41 +4,43 @@
     	<meta charset="utf-8">
     	<meta name="description" content="This website is an Audio Interval player that allows you to play an audio file at random intervals throughout the day">
     	<meta name="keywords" content="audio, interval, player, random, intervals, day">
+			<link rel="stylesheet" href="css/normalize.css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+			<link rel="stylesheet" href="css/style.css">
 			<title>Audio Interval</title>
 		</head>
-		<body>
+		<body class="bg-dark">
 			<div class="container my-5">
 				<div class="text-center mb-5">
-					<h1>Interval Audio Player</h1>
-					<p class="lead">Play an audio file at random intervals throughout the day</p>
+					<h1 class="text-light">Interval Audio Player</h1>
+					<p class="lead text-light">Play an audio file at random intervals throughout the day</p>
 					</div>		
 					<div class="row justify-content-center">
 						<div class="col-md-6">
-							<audio id="audio" src="audio/breath.mp3" class="d-block mx-auto"></audio>
+							<audio id="audio" src="audio/breath.mp3" class="d-block mx-auto text-light"></audio>
 							<div class="form-group">
-								<label for="minInterval">Minimum Interval (seconds):</label>
+								<label for="minInterval" class="text-light">Minimum Interval (seconds):</label>
 								<input type="number" class="form-control" id="minInterval" value="60">
 						</div>
 						<div class="form-group">
-								<label for="maxInterval">Maximum Interval (seconds):</label>
+								<label for="maxInterval" class="text-light">Maximum Interval (seconds):</label>
 								<input type="number" class="form-control" id="maxInterval" value="7200">
 						</div>
 						<div class="form-group">
-							<label for="audioFile">Change audio file:</label>
+							<label for="audioFile" class="text-light">Change audio file:</label>
 							<input type="file" class="form-control-file" id="audioFile" accept="audio/*">
 						</div>		
 							<div class="text-center">
-								<button class="btn btn-primary" onclick="playAudio()">Start</button>
-								<button class="btn btn-danger" onclick="stopAudio()">Stop</button>
-								<button class="btn btn-secondary" onclick="toggleCountdown()">Toggle Countdown</button>
-								<button class="btn btn-secondary" id="mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+								<button class="btn btn-primary text-light" onclick="playAudio()">Start</button>
+								<button class="btn btn-danger text-light" onclick="stopAudio()">Stop</button>
+								<button class="btn btn-secondary text-light" onclick="toggleCountdown()">Toggle Countdown</button>
+								<button class="btn btn-secondary text-light" id="mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 							</div>
 						</div>
 					</div>
-					<div class="row justify-content-center mt-3" id="countdown">
+					<div class="row justify-content-center mt-3 hide">
 						<div class="col-md-6">
-							<p class="text-center">Next audio in <span id="time"></span></p>
+							<p class="text-center text-light">Next audio in <span id="time"></span></p>
 						</div>
 					</div>
 				</div>
