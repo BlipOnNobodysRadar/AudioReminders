@@ -21,10 +21,15 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
-     
-}
-
+/* Dark mode styles */
+body.bg-dark {
+     background-color: #343a40 !important;
+   }
+   
+   /* Light mode styles */
+   body.bg-light {
+     background-color: #fff !important;
+   }
 
 /******************************************
 /* LAYOUT

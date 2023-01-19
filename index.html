@@ -5,50 +5,41 @@
     	<meta name="description" content="description here">
     	<meta name="keywords" content="one, two, three">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-
-		<title>Document title</title>
-
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<header>
-		</header>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<audio id="audio" src="audio/breath.mp3"></audio>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="form-group">
-						<label for="minInterval">Minimum Interval (seconds):</label>
-						<input type="number" class="form-control" id="minInterval" value="60">
+			<title>Audio Interval</title>
+		</head>
+		<body>
+			<div class="container my-5">
+				<div class="text-center mb-5">
+					<h1>Audio Interval</h1>
+					<p class="lead">Play an audio file at random intervals throughout the day</p>
 					</div>
-					<div class="form-group">
-						<label for="maxInterval">Maximum Interval (seconds):</label>
-						<input type="number" class="form-control" id="maxInterval" value="7200">
+					<div class="row justify-content-center">
+						<div class="col-md-6">
+							<audio id="audio" src="audio/breath.mp3" class="d-block mx-auto"></audio>
+							<div class="form-group">
+								<label for="minInterval">Minimum Interval (seconds):</label>
+								<input type="number" class="form-control" id="minInterval" value="60">
+							</div>
+							<div class="form-group">
+								<label for="maxInterval">Maximum Interval (seconds):</label>
+								<input type="number" class="form-control" id="maxInterval" value="7200">
+							</div>
+							<div class="text-center">
+								<button class="btn btn-primary" onclick="playAudio()">Start</button>
+								<button class="btn btn-danger" onclick="stopAudio()">Stop</button>
+								<button class="btn btn-secondary" onclick="toggleCountdown()">Toggle Countdown</button>
+								<button class="btn btn-secondary" id="mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+							</div>
+						</div>
 					</div>
-					<button class="btn btn-primary" onclick="playAudio()">Start</button>
-					<button class="btn btn-danger" onclick="stopAudio()">Stop</button>
-					<button class="btn btn-secondary" onclick="toggleCountdown()">Toggle Countdown</button>
+					<div class="row justify-content-center mt-3" id="countdown">
+						<div class="col-md-6">
+							<p class="text-center">Next audio in <span id="time"></span></p>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row" id="countdown">
-				<div class="col-md-12">
-					Next audio in <span id="time"></span>
-				</div>
-			</div>
-		</div>
 		
+				<script type="text/javascript" src="js/main.js"></script>
+			</body>
+		</html>
 		
-		
-		<footer>
-		</footer>
-
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
-</html>

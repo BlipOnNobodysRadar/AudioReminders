@@ -7,6 +7,16 @@ let time = document.getElementById("time");
 let nextPlayback;
 let countdownInterval;
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("bg-dark");
+  const textElements = document.querySelectorAll(
+    "h1, h2, h3, h4, p, span, button, label"
+  );
+  textElements.forEach((element) => {
+    element.classList.add("text-light");
+  });
+});
+
 const playAudio = () => {
   // play the audio
   audio.play();
@@ -67,6 +77,22 @@ const toggleCountdown = () => {
   countdown.style.display === "block"
     ? (countdown.style.display = "none")
     : (countdown.style.display = "block");
+};
+
+const toggleTextColors = (darkColor, lightColor) => {
+  const textElements = document.querySelectorAll(
+    "h1, h2, h3, h4, p, span, button, label"
+  );
+  textElements.forEach((element) => {
+    element.classList.toggle(darkColor);
+    element.classList.toggle(lightColor);
+  });
+};
+const toggleDarkMode = () => {
+  const body = document.querySelector("body");
+  body.classList.toggle("bg-dark");
+  body.classList.toggle("bg-light");
+  toggleTextColors("text-dark", "text-light");
 };
 
 countdown.style.display = "none";
