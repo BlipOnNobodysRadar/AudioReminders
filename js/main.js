@@ -21,17 +21,6 @@ audioFile.addEventListener("change", function () {
   }
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.body.classList.add("bg-dark");
-//   const textElements = document.querySelectorAll(
-//     "h1, h2, h3, h4, p, span, button, label"
-//   );
-//   textElements.forEach((element) => {
-//     element.classList.add("text-light");
-//   });
-//   countdown.style.display = "none";
-// });
-
 const playAudio = () => {
   // play the audio
   audio.play();
