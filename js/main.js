@@ -7,6 +7,16 @@ let time = document.getElementById("time");
 let nextPlayback;
 let countdownInterval;
 
+const audioFile = document.getElementById("audioFile");
+audioFile.addEventListener("change", function () {
+  console.log("Audio file changed!");
+  const file = audioFile.files[0];
+  // check if the file is an audio file
+  if (file.type.startsWith("audio")) {
+    audio.src = URL.createObjectURL(file);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("bg-dark");
   const textElements = document.querySelectorAll(
@@ -15,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   textElements.forEach((element) => {
     element.classList.add("text-light");
   });
+  countdown.style.display = "none";
 });
 
 const playAudio = () => {
@@ -94,5 +105,3 @@ const toggleDarkMode = () => {
   body.classList.toggle("bg-light");
   toggleTextColors("text-dark", "text-light");
 };
-
-countdown.style.display = "none";

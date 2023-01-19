@@ -10,20 +10,24 @@
 		<body>
 			<div class="container my-5">
 				<div class="text-center mb-5">
-					<h1>Audio Interval</h1>
+					<h1>Interval Audio Player</h1>
 					<p class="lead">Play an audio file at random intervals throughout the day</p>
-					</div>
+					</div>		
 					<div class="row justify-content-center">
 						<div class="col-md-6">
 							<audio id="audio" src="audio/breath.mp3" class="d-block mx-auto"></audio>
 							<div class="form-group">
 								<label for="minInterval">Minimum Interval (seconds):</label>
 								<input type="number" class="form-control" id="minInterval" value="60">
-							</div>
-							<div class="form-group">
+						</div>
+						<div class="form-group">
 								<label for="maxInterval">Maximum Interval (seconds):</label>
 								<input type="number" class="form-control" id="maxInterval" value="7200">
-							</div>
+						</div>
+						<div class="form-group">
+							<label for="audioFile">Select audio file:</label>
+							<input type="file" class="form-control-file" id="audioFile" accept="audio/*">
+						</div>		
 							<div class="text-center">
 								<button class="btn btn-primary" onclick="playAudio()">Start</button>
 								<button class="btn btn-danger" onclick="stopAudio()">Stop</button>
