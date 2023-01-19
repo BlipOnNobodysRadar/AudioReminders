@@ -1,4 +1,5 @@
 let audio = document.getElementById("audio");
+audio.playbackRate = 0.85;
 let minInterval = document.getElementById("minInterval").value;
 let maxInterval = document.getElementById("maxInterval").value;
 let intervalId;
@@ -14,6 +15,7 @@ audioFile.addEventListener("change", function () {
   // check if the file is an audio file
   if (file.type.startsWith("audio")) {
     audio.src = URL.createObjectURL(file);
+    audio.playbackRate = 1;
   }
 });
 
